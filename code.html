@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Special Question for Aaraiz Khan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .font-romantic {
+      font-family: 'Dancing Script', cursive;
+    }
+    .font-serif-title {
+      font-family: 'Playfair Display', serif;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-12px) rotate(3deg); }
+    }
+    @keyframes pulse-glow {
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 0.9; transform: scale(1.08); }
+    }
+    @keyframes heartBurst {
+      0% { transform: scale(0.6) translateY(0); opacity: 1; }
+      100% { transform: scale(1.6) translateY(-80px); opacity: 0; }
+    }
+    .animate-float {
+      animation: float 4s ease-in-out infinite;
+    }
+    .animate-float-delayed {
+      animation: float 5s ease-in-out 1.5s infinite;
+    }
+    .animate-glow {
+      animation: pulse-glow 3s ease-in-out infinite;
+    }
+    /* Floating petaled background particles */
+    .heart-particle {
+      position: absolute;
+      pointer-events: none;
+      user-select: none;
+      animation: fall 10s linear infinite;
+    }
+    @keyframes fall {
+      0% { transform: translateY(-10vh) rotate(0deg) scale(0.8); opacity: 0; }
+      15% { opacity: 0.8; }
+      90% { opacity: 0.8; }
+      100% { transform: translateY(105vh) rotate(360deg) scale(1.2); opacity: 0; }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-rose-50 via-pink-100 to-rose-200 min-h-screen text-slate-800 relative overflow-x-hidden selection:bg-rose-300 selection:text-rose-900">
+
+  <!-- Ambient floating particles background container -->
+  <div id="particle-bg" class="fixed inset-0 pointer-events-none z-0 overflow-hidden"></div>
+
+  <!-- Header / Nav subtle brand -->
+  <header class="relative z-10 w-full pt-8 pb-4 px-8 flex justify-between items-center max-w-6xl mx-auto">
+    <div class="flex items-center gap-2 text-rose-600 font-romantic text-2xl tracking-wide">
+      <span class="text-3xl">💌</span>
+      <span>A Secret Message</span>
+    </div>
+    <div class="bg-white/70 backdrop-blur-md px-4 py-1.5 rounded-full border border-pink-200/80 shadow-sm text-xs font-semibold uppercase tracking-wider text-rose-500 flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-rose-500 animate-ping"></span>
+      For Aaraiz Khan &bull; From Qasim Khan
+    </div>
+  </header>
+
+  <!-- Main Multi-stage Interactive Container -->
+  <main class="relative z-10 max-w-3xl mx-auto px-4 py-8 pb-20">
+
+    <!-- Progress Indicator Bar -->
+    <div class="mb-8 max-w-md mx-auto">
+      <div class="flex justify-between items-center text-xs font-semibold text-rose-700/70 mb-2 px-1">
+        <span id="progress-label">Question 1 of 4</span>
+        <span id="progress-percent" class="font-bold">25%</span>
+      </div>
+      <div class="w-full bg-rose-200/70 rounded-full h-2 p-0.5 overflow-hidden backdrop-blur-sm border border-white/50 shadow-inner">
+        <div id="progress-bar" class="bg-gradient-to-r from-rose-500 to-pink-500 h-full rounded-full transition-all duration-500 ease-out" style="width: 25%;"></div>
+      </div>
+    </div>
+
+    <!-- CARD WRAPPER -->
+    <div class="relative bg-white/85 backdrop-blur-xl rounded-3xl p-8 sm:p-12 shadow-[0_20px_60px_-15px_rgba(244,63,94,0.25)] border border-white/80 transition-all duration-300">
+      
+      <!-- Decorative background blur orb -->
+      <div class="absolute -top-12 -right-12 w-48 h-48 bg-pink-300/40 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-10 -left-10 w-48 h-48 bg-rose-300/40 rounded-full blur-3xl pointer-events-none"></div>
+
+      <!-- ================= STEP 1: WARM UP / SWEET QUESTION 1 ================= -->
+      <section id="step-1" class="step-card text-center space-y-6">
+        <div class="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-rose-100 text-rose-500 text-4xl shadow-inner border border-rose-200/60 animate-float mx-auto">
+          ✨
+        </div>
+        <div>
+          <span class="text-rose-500 font-romantic text-3xl block mb-1">Hey Aaraiz...</span>
+          <h1 class="font-serif-title text-2xl sm:text-3xl font-bold text-slate-800 leading-snug">
+            Before we talk about serious things, do you agree our chemistry is 10/10?
+          </h1>
+          <p class="text-slate-500 text-sm mt-2 max-w-md mx-auto">
+            Qasim Khan has conducted comprehensive research and formulated this peer-reviewed questionnaire.
+          </p>
+        </div>
+
+        <div class="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md mx-auto">
+          <button onclick="nextStep(2, 'Undeniably 100/10 ✨')" class="group relative px-6 py-4 bg-gradient-to-r from-rose-500 to-pink-500 text-white font-medium rounded-2xl shadow-lg shadow-rose-500/25 hover:shadow-rose-500/40 hover:-translate-y-0.5 transition-all active:scale-95 flex items-center justify-center gap-2">
+            <span>Undeniably 100/10!</span>
+            <span class="group-hover:translate-x-1 transition-transform">🔥</span>
+          </button>
+          <button onclick="nextStep(2, 'Obviously yes! 💕')" class="px-6 py-4 bg-rose-50 hover:bg-rose-100 border border-rose-200 text-rose-700 font-medium rounded-2xl transition-all hover:-translate-y-0.5 active:scale-95 flex items-center justify-center gap-2">
+            <span>Obviously yes 💕</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- ================= STEP 2: FUN QUESTION 2 ================= -->
+      <section id="step-2" class="step-card text-center space-y-6 hidden">
+        <div class="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-pink-100 text-pink-500 text-4xl shadow-inner border border-pink-200/60 animate-float mx-auto">
+          🍕
+        </div>
+        <div>
+          <span class="text-rose-500 font-romantic text-3xl block mb-1">Crucial Investigation</span>
+          <h2 class="font-serif-title text-2xl sm:text-3xl font-bold text-slate-800 leading-snug">
+            When we go on dates, who gets the last slice of pizza / bite of dessert?
+          </h2>
+          <p class="text-slate-500 text-sm mt-2 max-w-md mx-auto">
+            Choose carefully, Aaraiz — future late-night food deliveries depend on this answer.
+          </p>
+        </div>
+
+        <div class="pt-4 space-y-3 max-w-md mx-auto">
+          <button onclick="nextStep(3, 'We split it equally')" class="w-full px-6 py-3.5 bg-rose-50 hover:bg-rose-100 border border-rose-200 text-rose-800 font-medium rounded-2xl transition-all hover:border-rose-400 text-left flex items-center justify-between">
+            <span>Option A: We split it 50/50 like civilized romantics</span>
+            <span>⚖️</span>
+          </button>
+          <button onclick="nextStep(3, 'You let me have it')" class="w-full px-6 py-3.5 bg-rose-50 hover:bg-rose-100 border border-rose-200 text-rose-800 font-medium rounded-2xl transition-all hover:border-rose-400 text-left flex items-center justify-between">
+            <span>Option B: You give it to me because I'm cute</span>
+            <span>🥺</span>
+          </button>
+          <button onclick="nextStep(3, 'Qasim buys double food')" class="w-full px-6 py-3.5 bg-gradient-to-r from-rose-500 to-pink-500 text-white font-medium rounded-2xl shadow-md hover:shadow-lg transition-all text-left flex items-center justify-between">
+            <span>Option C: Qasim just orders 2 pizzas so nobody fights</span>
+            <span>👑</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- ================= STEP 3: EMOTIONAL QUESTION 3 ================= -->
+      <section id="step-3" class="step-card text-center space-y-6 hidden">
+        <div class="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-rose-100 text-rose-500 text-4xl shadow-inner border border-rose-200/60 animate-float mx-auto">
+          🌟
+        </div>
+        <div>
+          <span class="text-rose-500 font-romantic text-3xl block mb-1">A Little Honesty</span>
+          <h2 class="font-serif-title text-2xl sm:text-3xl font-bold text-slate-800 leading-snug">
+            What is the absolute best quality of Qasim Khan?
+          </h2>
+          <p class="text-slate-500 text-sm mt-2 max-w-md mx-auto">
+            (Don't worry, there are no wrong answers here, but some are definitely flattering!)
+          </p>
+        </div>
+
+        <div class="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-md mx-auto">
+          <button onclick="nextStep(4, 'His sense of humor')" class="p-4 bg-white hover:bg-rose-50 border border-rose-200 text-rose-900 rounded-2xl text-left transition-all hover:shadow-md">
+            <span class="text-xl block mb-1">😂</span>
+            <span class="font-semibold text-sm">Top-tier Sense of Humor</span>
+            <span class="text-xs text-slate-500 block">Always makes you giggle</span>
+          </button>
+          <button onclick="nextStep(4, 'His caring heart')" class="p-4 bg-white hover:bg-rose-50 border border-rose-200 text-rose-900 rounded-2xl text-left transition-all hover:shadow-md">
+            <span class="text-xl block mb-1">🛡️</span>
+            <span class="font-semibold text-sm">Gentle & Caring Heart</span>
+            <span class="text-xs text-slate-500 block">Always has your back</span>
+          </button>
+          <button onclick="nextStep(4, 'His handsome smile')" class="p-4 bg-white hover:bg-rose-50 border border-rose-200 text-rose-900 rounded-2xl text-left transition-all hover:shadow-md">
+            <span class="text-xl block mb-1">🥰</span>
+            <span class="font-semibold text-sm">That Charming Smile</span>
+            <span class="text-xs text-slate-500 block">Guaranteed butterflies</span>
+          </button>
+          <button onclick="nextStep(4, 'All of the above')" class="p-4 bg-gradient-to-br from-rose-500 to-pink-500 text-white rounded-2xl text-left transition-all shadow-md hover:shadow-lg">
+            <span class="text-xl block mb-1">💖</span>
+            <span class="font-semibold text-sm">All of the Above + More</span>
+            <span class="text-xs text-rose-100 block">The whole package!</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- ================= STEP 4: THE BIG PROPOSAL (RUNAWAY NO BUTTON) ================= -->
+      <section id="step-4" class="step-card text-center space-y-6 hidden">
+        <div class="relative inline-flex items-center justify-center w-24 h-24 rounded-3xl bg-gradient-to-tr from-rose-500 to-pink-400 text-white text-5xl shadow-xl shadow-rose-500/30 animate-glow mx-auto">
+          💍
+          <span class="absolute -top-2 -right-2 text-2xl animate-bounce">💖</span>
+        </div>
+
+        <div>
+          <span class="text-rose-500 font-romantic text-3xl sm:text-4xl block mb-1">The Grand Finale...</span>
+          <h2 class="font-serif-title text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight">
+            Aaraiz Khan,<br>
+            <span class="bg-gradient-to-r from-rose-600 via-pink-600 to-rose-500 bg-clip-text text-transparent">
+              Will you be my girlfriend?
+            </span>
+          </h2>
+          <p class="text-slate-600 text-base mt-3 max-w-lg mx-auto">
+            From endless late talks to everyday laughs, you make every second brighter. Say yes to making it official with <strong>Qasim Khan</strong>?
+          </p>
+        </div>
+
+        <!-- PLAYFUL ESCAPING ARENA -->
+        <div id="proposal-arena" class="relative w-full h-48 sm:h-56 mt-6 rounded-2xl bg-gradient-to-b from-rose-50/70 to-pink-50/50 border border-dashed border-rose-300 flex items-center justify-center overflow-hidden">
+          
+          <div class="absolute inset-0 pointer-events-none flex items-center justify-center opacity-10 text-rose-300 font-romantic text-8xl select-none">
+            Love
+          </div>
+
+          <!-- The YES Button (grows over time if they chase NO) -->
+          <button id="yes-btn" onclick="celebrateSuccess()" class="z-20 px-10 py-5 bg-gradient-to-r from-rose-500 via-pink-500 to-rose-600 text-white font-extrabold text-xl sm:text-2xl rounded-2xl shadow-[0_10px_30px_rgba(244,63,94,0.4)] hover:shadow-[0_15px_40px_rgba(244,63,94,0.6)] hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-3">
+            <span>YES! Absolutely!</span>
+            <span class="text-2xl animate-pulse">❤️</span>
+          </button>
+
+          <!-- The UNTOUCHABLE NO Button (Flees from cursor / touches) -->
+          <button id="no-btn" class="absolute z-30 px-6 py-3 bg-white/90 hover:bg-slate-50 text-slate-500 font-semibold text-sm rounded-xl border border-slate-300 shadow-md cursor-pointer transition-all duration-150 select-none" style="top: 25px; right: 30px;">
+            No 🙈
+          </button>
+
+        </div>
+
+        <p id="tease-text" class="text-xs text-rose-500 italic h-5 transition-all">
+          (Hint: Try catching that "No" button... if you dare! 😉)
+        </p>
+
+      </section>
+
+      <!-- ================= STEP 5: SUCCESS / CELEBRATION SCREEN ================= -->
+      <section id="step-success" class="step-card text-center space-y-6 hidden">
+        <div class="inline-flex items-center justify-center w-24 h-24 rounded-full bg-rose-100 text-rose-600 text-6xl shadow-inner border border-rose-300 animate-bounce mx-auto">
+          🎉
+        </div>
+
+        <div class="space-y-3">
+          <span class="text-rose-500 font-romantic text-4xl block">She said YES! 💖</span>
+          <h2 class="font-serif-title text-3xl sm:text-4xl font-extrabold text-slate-900">
+            Official Announcement!
+          </h2>
+          <div class="inline-block bg-gradient-to-r from-rose-500 to-pink-500 text-white px-6 py-2 rounded-full font-bold text-lg shadow-md my-2">
+            Aaraiz Khan &amp; Qasim Khan
+          </div>
+          <p class="text-slate-600 max-w-lg mx-auto text-base">
+            It's official and sealed in the archives of love! You've officially accepted the most romantic contract of the century.
+          </p>
+        </div>
+
+        <!-- Romantic Certificate Box -->
+        <div class="bg-gradient-to-br from-rose-50 to-pink-50 p-6 rounded-2xl border-2 border-rose-200 text-left space-y-3 max-w-md mx-auto shadow-inner relative overflow-hidden">
+          <div class="text-xs uppercase font-extrabold tracking-widest text-rose-500 border-b border-rose-200 pb-2 flex justify-between">
+            <span>Certificate of Love</span>
+            <span>Status: Forever Verified</span>
+          </div>
+          <ul class="text-sm text-slate-700 space-y-2">
+            <li class="flex items-center gap-2">
+              <span class="text-rose-500 font-bold">✔</span>
+              <span><strong>Her:</strong> Aaraiz Khan (The Queen)</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-rose-500 font-bold">✔</span>
+              <span><strong>Him:</strong> Qasim Khan (The Luckiest Guy)</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-rose-500 font-bold">✔</span>
+              <span><strong>Terms:</strong> Unlimited cuddles, food, laughs &amp; loyalty.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="pt-2 flex flex-col sm:flex-row justify-center gap-3">
+          <button onclick="sendLoveAlert()" class="px-8 py-3.5 bg-gradient-to-r from-rose-500 to-pink-600 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
+            <span>Send Qasim a Screenshot 📸</span>
+          </button>
+          <button onclick="resetFlow()" class="px-6 py-3.5 bg-white border border-rose-200 text-rose-700 font-medium rounded-xl hover:bg-rose-50 transition-all text-sm">
+            Replay the Magic ✨
+          </button>
+        </div>
+
+      </section>
+
+    </div>
+
+    <!-- Sweet personalized footer note -->
+    <footer class="mt-8 text-center text-xs text-rose-700/60 font-medium">
+      Crafted with pure love &bull; Made exclusively for Aaraiz Khan with all my heart by Qasim Khan
+    </footer>
+
+  </main>
+
+  <!-- Confetti and hearts canvas effect -->
+  <canvas id="confetti-canvas" class="fixed inset-0 pointer-events-none z-50"></canvas>
+
+  <script>
+    // --- Ambient floating background hearts ---
+    const bgContainer = document.getElementById('particle-bg');
+    const emojis = ['🌸', '💖', '✨', '💕', '🌷', '🤍'];
+    for (let i = 0; i < 22; i++) {
+      const p = document.createElement('div');
+      p.className = 'heart-particle';
+      p.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+      p.style.left = Math.random() * 95 + 'vw';
+      p.style.fontSize = (Math.random() * 18 + 14) + 'px';
+      p.style.animationDuration = (Math.random() * 6 + 6) + 's';
+      p.style.animationDelay = (Math.random() * 8) + 's';
+      bgContainer.appendChild(p);
+    }
+
+    // --- State & Navigation ---
+    let currentStep = 1;
+    const totalSteps = 4;
+    let dodgeCount = 0;
+    const teaseMessages = [
+      "Nice try! You can't click No! 😜",
+      "Whoops, too slow! The button has turbo boosters! 🏎️💨",
+      "Still trying? The universe clearly wants you to say YES! 🌌",
+      "Nope, resistance is futile! Say yes already! ❤️",
+      "The 'No' button is officially out of office! ✈️",
+      "Qasim has permanently disabled the 'No' option! 🥰"
+    ];
+
+    function updateProgress(step) {
+      const progressLabel = document.getElementById('progress-label');
+      const progressPercent = document.getElementById('progress-percent');
+      const progressBar = document.getElementById('progress-bar');
+      
+      const pct = Math.min(100, Math.round((step / totalSteps) * 100));
+      progressBar.style.width = pct + '%';
+      progressPercent.innerText = pct + '%';
+      if (step <= totalSteps) {
+        progressLabel.innerText = `Question ${step} of ${totalSteps}`;
+      } else {
+        progressLabel.innerText = "Complete! 🎉";
+      }
+    }
+
+    function nextStep(stepNumber, selectedText) {
+      document.querySelectorAll('.step-card').forEach(el => el.classList.add('hidden'));
+      const target = document.getElementById('step-' + stepNumber);
+      if (target) {
+        target.classList.remove('hidden');
+        target.classList.add('animate-fade-in');
+        currentStep = stepNumber;
+        updateProgress(stepNumber);
+      }
+    }
+
+    // --- UNTOUCHABLE "NO" BUTTON LOGIC ---
+    const noBtn = document.getElementById('no-btn');
+    const yesBtn = document.getElementById('yes-btn');
+    const arena = document.getElementById('proposal-arena');
+    const teaseText = document.getElementById('tease-text');
+
+    function escapeNoButton(e) {
+      dodgeCount++;
+      const arenaRect = arena.getBoundingClientRect();
+      const btnRect = noBtn.getBoundingClientRect();
+
+      // Safe bounds inside arena
+      const maxX = arenaRect.width - btnRect.width - 24;
+      const maxY = arenaRect.height - btnRect.height - 24;
+
+      const randomX = Math.max(12, Math.floor(Math.random() * maxX));
+      const randomY = Math.max(12, Math.floor(Math.random() * maxY));
+
+      noBtn.style.left = randomX + 'px';
+      noBtn.style.top = randomY + 'px';
+      noBtn.style.right = 'auto';
+
+      // Update tease message
+      teaseText.innerText = teaseMessages[dodgeCount % teaseMessages.length];
+      teaseText.classList.remove('text-rose-500');
+      teaseText.classList.add('text-rose-700', 'font-bold');
+
+      // Make YES button grow bigger with every attempt to hit NO
+      const scale = Math.min(1.4, 1 + dodgeCount * 0.08);
+      yesBtn.style.transform = `scale(${scale})`;
+    }
+
+    // Runaway on mouseover, mouseenter, touchstart, or focus
+    noBtn.addEventListener('mouseenter', escapeNoButton);
+    noBtn.addEventListener('mousemove', escapeNoButton);
+    noBtn.addEventListener('touchstart', function(e) {
+      e.preventDefault();
+      escapeNoButton(e);
+    });
+    noBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      escapeNoButton(e);
+    });
+
+    // --- CELEBRATION / CONFETTI SYSTEM ---
+    function celebrateSuccess() {
+      document.querySelectorAll('.step-card').forEach(el => el.classList.add('hidden'));
+      document.getElementById('step-success').classList.remove('hidden');
+      updateProgress(4);
+      document.getElementById('progress-label').innerText = "Forever & Always 💕";
+      document.getElementById('progress-bar').style.width = '100%';
+      document.getElementById('progress-percent').innerText = '100%';
+
+      startConfetti();
+    }
+
+    function sendLoveAlert() {
+      alert("Take a screenshot of this page right now and send it to Qasim with a heart! 💕💍");
+    }
+
+    function resetFlow() {
+      dodgeCount = 0;
+      yesBtn.style.transform = 'scale(1)';
+      noBtn.style.top = '25px';
+      noBtn.style.right = '30px';
+      noBtn.style.left = 'auto';
+      teaseText.innerText = "(Hint: Try catching that \"No\" button... if you dare! 😉)";
+      nextStep(1);
+    }
+
+    // Canvas Confetti
+    const canvas = document.getElementById('confetti-canvas');
+    const ctx = canvas.getContext('2d');
+    let confettiParticles = [];
+    let animationId = null;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function createConfettiPiece() {
+      const colors = ['#f43f5e', '#ec4899', '#fb7185', '#fda4af', '#f472b6', '#fbbf24', '#ffffff'];
+      return {
+        x: Math.random() * canvas.width,
+        y: -20,
+        size: Math.random() * 10 + 6,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        velY: Math.random() * 3 + 2,
+        velX: (Math.random() - 0.5) * 4,
+        rot: Math.random() * 360,
+        rotSpeed: (Math.random() - 0.5) * 10,
+        isHeart: Math.random() > 0.6
+      };
+    }
+
+    function startConfetti() {
+      confettiParticles = [];
+      for (let i = 0; i < 140; i++) {
+        confettiParticles.push(createConfettiPiece());
+      }
+      if (!animationId) {
+        animateConfetti();
+      }
+    }
+
+    function drawHeart(ctx, x, y, size, color) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      const topCurveHeight = size * 0.3;
+      ctx.moveTo(0, topCurveHeight);
+      // top left curve
+      ctx.bezierCurveTo(0, 0, -size / 2, 0, -size / 2, topCurveHeight);
+      // bottom left curve
+      ctx.bezierCurveTo(-size / 2, (size + topCurveHeight) / 2, 0, size, 0, size * 1.3);
+      // bottom right curve
+      ctx.bezierCurveTo(0, size, size / 2, (size + topCurveHeight) / 2, size / 2, topCurveHeight);
+      // top right curve
+      ctx.bezierCurveTo(size / 2, 0, 0, 0, 0, topCurveHeight);
+      ctx.closePath();
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function animateConfetti() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      confettiParticles.forEach((p, index) => {
+        p.y += p.velY;
+        p.x += p.velX;
+        p.rot += p.rotSpeed;
+
+        if (p.isHeart) {
+          drawHeart(ctx, p.x, p.y, p.size, p.color);
+        } else {
+          ctx.save();
+          ctx.translate(p.x, p.y);
+          ctx.rotate((p.rot * Math.PI) / 180);
+          ctx.fillStyle = p.color;
+          ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
+          ctx.restore();
+        }
+
+        // Respawn from top
+        if (p.y > canvas.height + 20) {
+          confettiParticles[index] = createConfettiPiece();
+        }
+      });
+
+      animationId = requestAnimationFrame(animateConfetti);
+    }
+  </script>
+</body>
+</html>
